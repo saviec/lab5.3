@@ -1,30 +1,23 @@
 import random
 
-
-def check(numb):
+def check(player_rok):
     while True:
         try:
-            numb in znach
-            int(numb)
-        except (ValueError, AttributeError):
-            numb = input('Ты ввел чтото не то .·´¯`(>▂<)´¯`·. попробуй еще раз (>' - '<) ')
-
-znach = '123'
-
-
-
-
-
-
+            number = int(player_rok)
+            if 1 <= number <= 3:
+                return number
+            else:
+                player_rok = input('Ты ввел чтото не то .·´¯`(>▂<)´¯`·. попробуй еще раз (>' - '<) ')
+        except ValueError:
+            player_rok = input('Ты ввел чтото не то .·´¯`(>▂<)´¯`·. попробуй еще раз (>' - '<) ')
 
 N = random.randint(4, 30)
 print('В начальной куче', N, 'камней (。・ω・。) ')
 move = 0
 
 while N != 1:
-    player_rok = input('Ваш ход, выберете сколько камней вы хотите убрать из кучи, 1, 2 или 3 o(〃＾▽＾〃)o ')
+    player_rok = input('Ваш ход, выберете сколько камней Вы хотите убрать из кучи, 1, 2 или 3 o(〃＾▽＾〃)o ')
     player_rok = check(player_rok)
-
     N = N - player_rok
     if N == 1:
         break
